@@ -21,11 +21,11 @@
           </div>
         </div>
       </div>
-      <div class="lg:col-span-1 px-5">
-        <h2 class="capitalize text-2xl font-semibold text-center">
+      <div class="lg:col-span-1 px-2">
+        <h2 class="capitalize text-2xl font-semibold lg:text-left text-center">
           -- most read posts --
         </h2>
-        <div class="grid lg:grid-cols-1 sm:grid-cols-2 grid-cols-1 gap-3">
+        <div class="grid lg:grid-cols-1 sm:grid-cols-2 grid-cols-1 gap-6 py-3">
           <div v-for="item, index in readPosts" :key="index">
             <AppCardWithImage
               :tech="item.tech"

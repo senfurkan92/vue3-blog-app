@@ -1,8 +1,7 @@
 <template>
-<header class="sticky top-0 transition-all z-10"
-:class="{'translate-y-2': fromTop>60, 'px-4': fromTop>60}">
-    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800"
-      :class="{'rounded': fromTop>60, 'px-4': fromTop>60}"
+<header class="sticky top-0 z-10">
+    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800 transition-all"
+      :class="{'rounded': fromTop>60, 'mx-4': fromTop>60, 'mt-4': fromTop>60}"
     >
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <router-link :to="{ name: 'home' }" class="flex items-center">
