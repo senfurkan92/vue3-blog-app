@@ -1,7 +1,7 @@
 <template>
   <div class="2xl:container mx-auto z-0">
-    <div id="indicators-carousel" class="relative z-0" data-carousel="static"
-      style="width: 100%; aspect-ratio: 4 / 1"
+    <div id="indicators-carousel" class="relative z-0 w-100" data-carousel="static"
+      style="aspect-ratio: 7/3"
     >
       <div class="overflow-hidden relative h-full">
         <template v-for="item, index in props.items" :key="index">
@@ -106,7 +106,7 @@ console.log(props.items);
 
 <style scoped>
 img {
-  object-fit:cover;
+  object-fit:fill;
   height: 100%;
   width: 100%;
 }
