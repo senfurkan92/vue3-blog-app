@@ -1,5 +1,5 @@
 <template>
-<header class="sticky top-0 transition-all"
+<header class="sticky top-0 transition-all z-10"
 :class="{'translate-y-2': fromTop>5, 'px-4': fromTop>5}">
     <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800"
       :class="{'rounded': fromTop>5, 'px-4': fromTop>5}"

@@ -1,6 +1,6 @@
 <template>
-  <div class="2xl:container mx-auto">
-    <div id="indicators-carousel" class="relative" data-carousel="static"
+  <div class="2xl:container mx-auto z-0">
+    <div id="indicators-carousel" class="relative z-0" data-carousel="static"
       style="width: 100%; aspect-ratio: 4 / 1"
     >
       <div class="overflow-hidden relative h-full">

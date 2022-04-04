@@ -8,7 +8,7 @@
 
     <!-- Content -->
     <template #content>
-      <main class="mb-5">
+      <main>
         <router-view></router-view>
       </main>
     </template>
