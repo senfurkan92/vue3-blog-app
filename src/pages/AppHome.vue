@@ -67,7 +67,7 @@ const carouselItems = reactive([
 const recentPosts = reactive([
   {
     tech: 'Vue',
-    id: '2',
+    id: 2,
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
@@ -75,7 +75,7 @@ const recentPosts = reactive([
   },
   {
     tech: 'Vue',
-    id: '2',
+    id: 2,
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
@@ -83,7 +83,7 @@ const recentPosts = reactive([
   },
   {
     tech: 'Vue',
-    id: '2',
+    id: 2,
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
@@ -91,7 +91,7 @@ const recentPosts = reactive([
   },
   {
     tech: 'Vue',
-    id: '2',
+    id: 2,
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
@@ -102,7 +102,7 @@ const recentPosts = reactive([
 const readPosts = reactive([
   {
     tech: 'Vue',
-    id: '2',
+    id: 2,
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
@@ -110,7 +110,7 @@ const readPosts = reactive([
   },
   {
     tech: 'Vue',
-    id: '2',
+    id: 2,
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
@@ -118,7 +118,7 @@ const readPosts = reactive([
   },
   {
     tech: 'Vue',
-    id: '2',
+    id: 2,
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
@@ -126,7 +126,7 @@ const readPosts = reactive([
   },
   {
     tech: 'Vue',
-    id: '2',
+    id: 2,
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',

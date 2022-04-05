@@ -100,8 +100,6 @@ import { defineProps } from 'vue';
 const props = defineProps<{
   items: Array<unknown>,
 }>();
-
-console.log(props.items);
 </script>
 
 <style scoped>
