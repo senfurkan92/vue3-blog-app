@@ -3,7 +3,7 @@
     class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md
     dark:bg-gray-800 dark:border-gray-700"
   >
-    <router-link :to="{ name:'posts-post', params: {tech: props.tech, id: props.id}}">
+    <router-link :to="props.to">
       <img class="rounded-t-lg"
         :src="props.imgSrc"
         :alt="props.imgAlt"/>
@@ -18,7 +18,7 @@
         {{props.description}}
       </p>
       <router-link
-        href="#" :to="{ name:'posts-post', params: {tech: props.tech, id: props.id}}"
+        href="#" :to="props.to"
         class="inline-flex items-center py-2 px-3 text-sm font-medium text-center
         text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4
         focus:outline-none focus:ring-blue-300 dark:bg-blue-600
@@ -47,12 +47,8 @@
 import { defineProps } from 'vue';
 
 const props = defineProps({
-  tech: {
+  to: {
     type: String,
-    required: true,
-  },
-  id: {
-    type: Number,
     required: true,
   },
   imgSrc: {

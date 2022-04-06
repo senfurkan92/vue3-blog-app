@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{name: 'posts-post', params: { tech: props.tech, id: props.id}}"
+  <router-link :to="props.to"
     class="flex flex-col items-center bg-white rounded-lg border shadow-md
     md:flex-row md:max-w-xlhover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800
   dark:hover:bg-gray-700"
@@ -26,12 +26,8 @@
 import { defineProps } from 'vue';
 
 const props = defineProps({
-  tech: {
+  to: {
     type: String,
-    required: true,
-  },
-  id: {
-    type: Number,
     required: true,
   },
   imgSrc: {
