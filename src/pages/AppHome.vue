@@ -10,8 +10,7 @@
         <div class="flex flex-col">
           <div class="py-3" v-for="item, index in recentPosts" :key="index">
             <AppHorizontalCard
-              :tech="item.tech"
-              :id="item.id"
+              :to="item.to"
               :imgSrc="item.imgSrc"
               :imgAlt="item.imgAlt"
               :title="item.title"
@@ -27,15 +26,12 @@
         </h2>
         <div class="grid lg:grid-cols-1 sm:grid-cols-2 grid-cols-1 gap-6 py-3">
           <div v-for="item, index in readPosts" :key="index">
-            <AppCardWithImage
-              :tech="item.tech"
-              :id="item.id"
-              :imgSrc="item.imgSrc"
-              :imgAlt="item.imgAlt"
+            <AppDefaultCard
+              :to="item.to"
               :title="item.title"
               :description="item.description"
             >
-            </AppCardWithImage>
+            </AppDefaultCard>
           </div>
         </div>
       </div>
@@ -47,7 +43,7 @@
 import { reactive } from 'vue';
 import AppCarousel from '@/components/common/AppCarousel.vue';
 import AppHorizontalCard from '@/components/base/AppHorizontalCard.vue';
-import AppCardWithImage from '@/components/base/AppCardWithImage.vue';
+import AppDefaultCard from '@/components/base/AppDefaultCard.vue';
 
 const carouselItems = reactive([
   {
@@ -66,32 +62,28 @@ const carouselItems = reactive([
 
 const recentPosts = reactive([
   {
-    tech: 'Vue',
-    id: 2,
+    to: '/posts/vue/2',
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
     description: 'Duis sagittis libero at semper egestas. Integer metus sapien, ultrices non tellus id, viverra vehicula odio. Praesent mattis tempor efficitur. Phasellus euismod, tellus volutpat auctor venenatis, diam sapien volutpat eros, at viverra metus leo porttitor libero.',
   },
   {
-    tech: 'Vue',
-    id: 2,
+    to: '/posts/vue/2',
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
     description: 'Duis sagittis libero at semper egestas. Integer metus sapien, ultrices non tellus id, viverra vehicula odio. Praesent mattis tempor efficitur. Phasellus euismod, tellus volutpat auctor venenatis, diam sapien volutpat eros, at viverra metus leo porttitor libero.',
   },
   {
-    tech: 'Vue',
-    id: 2,
+    to: '/posts/vue/2',
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
     description: 'Duis sagittis libero at semper egestas. Integer metus sapien, ultrices non tellus id, viverra vehicula odio. Praesent mattis tempor efficitur. Phasellus euismod, tellus volutpat auctor venenatis, diam sapien volutpat eros, at viverra metus leo porttitor libero.',
   },
   {
-    tech: 'Vue',
-    id: 2,
+    to: '/posts/vue/2',
     imgSrc: 'https://source.unsplash.com/random',
     imgAlt: 'random unsplash img',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
@@ -101,34 +93,22 @@ const recentPosts = reactive([
 
 const readPosts = reactive([
   {
-    tech: 'Vue',
-    id: 2,
-    imgSrc: 'https://source.unsplash.com/random',
-    imgAlt: 'random unsplash img',
+    to: '/posts/vue/2',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
     description: 'Duis sagittis libero at semper egestas. Integer metus sapien, ultrices non tellus id, viverra vehicula odio. Praesent mattis tempor efficitur. Phasellus euismod, tellus volutpat auctor venenatis, diam sapien volutpat eros, at viverra metus leo porttitor libero.',
   },
   {
-    tech: 'Vue',
-    id: 2,
-    imgSrc: 'https://source.unsplash.com/random',
-    imgAlt: 'random unsplash img',
+    to: '/posts/vue/2',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
     description: 'Duis sagittis libero at semper egestas. Integer metus sapien, ultrices non tellus id, viverra vehicula odio. Praesent mattis tempor efficitur. Phasellus euismod, tellus volutpat auctor venenatis, diam sapien volutpat eros, at viverra metus leo porttitor libero.',
   },
   {
-    tech: 'Vue',
-    id: 2,
-    imgSrc: 'https://source.unsplash.com/random',
-    imgAlt: 'random unsplash img',
+    to: '/posts/vue/2',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
     description: 'Duis sagittis libero at semper egestas. Integer metus sapien, ultrices non tellus id, viverra vehicula odio. Praesent mattis tempor efficitur. Phasellus euismod, tellus volutpat auctor venenatis, diam sapien volutpat eros, at viverra metus leo porttitor libero.',
   },
   {
-    tech: 'Vue',
-    id: 2,
-    imgSrc: 'https://source.unsplash.com/random',
-    imgAlt: 'random unsplash img',
+    to: '/posts/vue/2',
     title: 'Curabitur placerat eu dolor eget interdum. Donec vestibulum nibh quis venenatis vulputate.',
     description: 'Duis sagittis libero at semper egestas. Integer metus sapien, ultrices non tellus id, viverra vehicula odio. Praesent mattis tempor efficitur. Phasellus euismod, tellus volutpat auctor venenatis, diam sapien volutpat eros, at viverra metus leo porttitor libero.',
   },
