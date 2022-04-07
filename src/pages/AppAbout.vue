@@ -6,7 +6,9 @@
       <div class="md:pb-10 pb-5">
         <AppTimeline></AppTimeline>
       </div>
-      <div class="md:pb-10 pb-5">a</div>
+      <div class="md:pb-10 pb-5">
+        <AppButton></AppButton>
+      </div>
     </div>
   </div>
 </template>
@@ -14,6 +16,7 @@
 <script setup>
 import AppBanner from '@/components/base/AppBanner.vue';
 import AppTimeline from '@/components/base/AppTimeline.vue';
+import AppButton from '@/components/base/AppButton.vue';
 
 const bannerItems = [
   {
