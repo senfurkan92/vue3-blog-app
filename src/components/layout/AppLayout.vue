@@ -1,5 +1,5 @@
 <template>
-    <div class="my-grid-wrapper bg-gray-200 dark:bg-gray-600">
+    <div class="my-grid-wrapper bg-sun-white dark:bg-moon-4">
         <slot name="header"></slot>
         <slot id=content name="content"></slot>
         <slot name="footer"></slot>

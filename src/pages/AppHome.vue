@@ -4,7 +4,8 @@
     <!-- Posts intro -->
     <div class="lg:p-10 p-6 grid lg:grid-cols-3 grid-cols-1 gap-4">
       <div class="lg:col-span-2 lg:border-r-2 border-slate-700 px-5">
-        <h2 class="capitalize text-2xl font-semibold text-center">
+        <h2 class="capitalize text-2xl font-semibold text-center
+          text-sun-red dark:text-moon-1">
           -- most recent posts --
         </h2>
         <div class="flex flex-col">
@@ -21,7 +22,8 @@
         </div>
       </div>
       <div class="lg:col-span-1 px-2">
-        <h2 class="capitalize text-2xl font-semibold lg:text-left text-center">
+        <h2 class="capitalize text-2xl font-semibold lg:text-left text-center
+          text-sun-red dark:text-moon-1">
           -- most read posts --
         </h2>
         <div class="grid lg:grid-cols-1 sm:grid-cols-2 grid-cols-1 gap-6 py-3">

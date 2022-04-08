@@ -1,6 +1,6 @@
 <template>
-  <footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
-    <div class="md:flex md:justify-between">
+  <footer class="p-4 bg-sun-blue text-sun-white dark:bg-moon-5 dark:text-moon-1 sm:p-6">
+    <div class="md:flex md:justify-between  container mx-auto">
       <div class="mb-6 md:mb-0">
         <a href="https://flowbite.com" class="flex items-center">
           <img src="/logo.png" class="mr-3 h-8" alt="FlowBite Logo" />

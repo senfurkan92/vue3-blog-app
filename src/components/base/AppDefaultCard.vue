@@ -1,11 +1,13 @@
 <template>
   <router-link :to="props.to"
-    class="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md
-  hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    class="block p-6 max-w-sm rounded-lg shadow-md border
+    border-mid-blue
+    dark:border-moon-2">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight
+      text-sun-navy dark:text-moon-1">
         {{ props.title }}
     </h5>
-    <p class="font-normal text-gray-700 dark:text-gray-400">
+    <p class="font-normal text-sun-blue dark:text-moon-2">
         {{ props.description }}
     </p>
   </router-link>

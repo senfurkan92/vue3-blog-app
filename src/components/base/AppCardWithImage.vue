@@ -1,7 +1,8 @@
 <template>
   <div
-    class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md
-    dark:bg-gray-800 dark:border-gray-700"
+    class="max-w-sm rounded-lg shadow-md border
+    border-mid-blue
+    dark:border-moon-2"
   >
     <router-link :to="props.to">
       <img class="rounded-t-lg"
@@ -10,19 +11,22 @@
     </router-link>
     <div class="p-5">
       <a href="#">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight
+          text-sun-navy dark:text-moon-1">
           {{props.title}}
         </h5>
       </a>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <p class="mb-3 font-normal text-sun-blue dark:text-moon-2">
         {{props.description}}
       </p>
       <router-link
         href="#" :to="props.to"
         class="inline-flex items-center py-2 px-3 text-sm font-medium text-center
-        text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4
-        focus:outline-none focus:ring-blue-300 dark:bg-blue-600
-        dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        rounded-lg hfocus:ring-4
+        focus:outline-none
+        border dark:border-mid-red border-mid-navy
+        dark:text-mid-red text-mid-white
+        dark:bg-moon-5 bg-mid-blue"
       >
         Read more
         <svg
