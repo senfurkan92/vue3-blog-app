@@ -1,5 +1,5 @@
 <template>
-    <div class="rounded-lg border-2 px-5 py-10
+    <div class="rounded-lg border-2 px-5 pt-10
       border-sun-blue dark:border-moon-2">
         <ol class="relative border-l border-sun-blue dark:border-moon-3">
             <li class="mb-10 ml-4">
