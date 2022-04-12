@@ -2,7 +2,9 @@
   <router-link :to="props.to"
     class="block p-6 max-w-sm rounded-lg shadow-md border
     border-mid-blue
-    dark:border-moon-2">
+    dark:border-moon-2 relative"
+    style="left:50%; transform: translate(-50%)"
+  >
     <h5 class="mb-2 text-2xl font-bold tracking-tight
       text-sun-navy dark:text-moon-1">
         {{ props.title }}
