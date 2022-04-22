@@ -29,11 +29,40 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/pages/AppAbout.vue'),
     name: 'about',
   },
+  {
+    path: '/admin',
+    alias: ['/administrator', '/dashboard'],
+    component: () => import('@/pages/admin/AppDashboard.vue'),
+    name: 'dashboard',
+    meta: {
+      auth: true,
+    },
+  },
+  {
+    path: '/signup',
+    alias: ['/register'],
+    component: () => import('@/pages/admin/AppSignUp.vue'),
+    name: 'signup',
+  },
+  {
+    path: '/signin',
+    alias: ['/login'],
+    component: () => import('@/pages/admin/AppSignIn.vue'),
+    name: 'signin',
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.auth) {
+    next('/signin');
+  } else {
+    next();
+  }
 });
 
 export default router;
