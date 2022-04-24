@@ -39,15 +39,18 @@
                 @onInput="form.repassword = $event"
               />
             </div>
-            <div class="mb-3">
+            <div class="mb-3 text-center">
               <AppButton
                 :content="'Submit'"
                 :deny="false"
                 :action="submit"
               />
             </div>
-            <div>
-              {{v$}}
+            <div class="mb-3 text-center text-sm underline underline-offset-2
+              text-sun-navy dark:text-moon-2 hover:italic hover:font-semibold">
+              <router-link :to="{name:'signin'}">
+                Sign In
+              </router-link>
             </div>
           </div>
         </div>

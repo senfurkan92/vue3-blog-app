@@ -50,6 +50,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/pages/admin/AppSignIn.vue'),
     name: 'signin',
   },
+  {
+    path: '/admin/blog',
+    component: () => import('@/pages/admin/AppBlog.vue'),
+    name: 'admin-blog',
+    meta: {
+      auth: true,
+    },
+  },
 ];
 
 const router = createRouter({
