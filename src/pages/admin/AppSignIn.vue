@@ -58,13 +58,16 @@ import {
   required,
   helpers,
 } from '@vuelidate/validators';
+import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 
 const swal = inject('$swal');
+const store = useStore();
+const router = useRouter();
 
 const form = reactive({
-  email: '',
-  password: '',
-  repassword: '',
+  email: 'senfurkan92@gmail.com',
+  password: 'Rambo1076',
 });
 
 const rules = {
@@ -79,10 +82,21 @@ const rules = {
 
 const v$ = useVuelidate(rules, form);
 
-const submit = () => {
-  swal.fire('hello');
-  if (v$.value.$invalid) {
-    console.log('asd');
+const submit = async () => {
+  if (!v$.value.$invalid) {
+    const resp = await store.dispatch('user/signIn', form);
+    if (resp.data) {
+      router.push('/admin');
+    } else {
+      swal.fire({
+        icon: 'error',
+        title: 'Unauthorized',
+        text: 'Something went wrong!',
+        footer: `<a href="/signup">
+                  Sign Up
+                </a>`,
+      });
+    }
   }
 };
 </script>

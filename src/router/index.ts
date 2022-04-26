@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import AppHome from '@/pages/AppHome.vue';
+import store from '@/store';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -66,7 +67,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.auth) {
+  if (to.meta.auth && !store.getters['user/isAuthenticated']) {
     next('/signin');
   } else {
     next();

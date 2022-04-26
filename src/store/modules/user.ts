@@ -32,9 +32,16 @@ export default {
     },
   },
   actions: {
-    async signUp({ commit } : any, payload: SignUpDto) : Promise<AxiosResponse<ActiveUser>> {
-      const resp = await axios.put('/user', payload);
-      if (resp.status === 201) {
+    async signUp({ commit }: any, payload: SignUpDto) : Promise<AxiosResponse<ActiveUser>> {
+      const resp = await axios.put('/users', payload);
+      if (resp.data) {
+        commit('setActiveUser', resp.data);
+      }
+      return resp;
+    },
+    async signIn({ commit }: any, payload: SignInDto) : Promise<AxiosResponse<ActiveUser>> {
+      const resp = await axios.post('/users/login', payload);
+      if (resp.data) {
         commit('setActiveUser', resp.data);
       }
       return resp;
