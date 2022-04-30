@@ -4,11 +4,10 @@ import { SignInDto, SignUpDto } from '../../models/dtos';
 
 interface ActiveUser {
   id: number,
-  createAt: Date,
-  updateAt: Date,
   isActive: boolean,
   emailConfirmed: boolean,
-  email: string
+  email: string,
+  token: string,
 }
 
 interface State {
@@ -32,6 +31,18 @@ export default {
     },
   },
   actions: {
+    async tokenCheck({ commit }: any) : Promise<void> {
+      const token = sessionStorage.getItem('UserToken');
+      if (token) {
+        const resp = await axios.get('/users/token/check', {
+          headers: {
+            authorization: token,
+          },
+        });
+        resp.data.token = token;
+        commit('setActiveUser', resp.data);
+      }
+    },
     async signUp({ commit }: any, payload: SignUpDto) : Promise<AxiosResponse<ActiveUser>> {
       const resp = await axios.put('/users', payload);
       if (resp.data) {
@@ -43,6 +54,7 @@ export default {
       const resp = await axios.post('/users/login', payload);
       if (resp.data) {
         commit('setActiveUser', resp.data);
+        sessionStorage.setItem('UserToken', resp.data.token);
       }
       return resp;
     },

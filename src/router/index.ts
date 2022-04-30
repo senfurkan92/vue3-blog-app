@@ -44,12 +44,27 @@ const routes: Array<RouteRecordRaw> = [
     alias: ['/register'],
     component: () => import('@/pages/admin/AppSignUp.vue'),
     name: 'signup',
+    beforeEnter(to, from, next) {
+      console.log(store.getters['user/isAuthenticated']);
+      if (!store.getters['user/isAuthenticated']) {
+        next();
+      } else {
+        next('/dashboard');
+      }
+    },
   },
   {
     path: '/signin',
     alias: ['/login'],
     component: () => import('@/pages/admin/AppSignIn.vue'),
     name: 'signin',
+    beforeEnter(to, from, next) {
+      if (!store.getters['user/isAuthenticated']) {
+        next();
+      } else {
+        next('/dashboard');
+      }
+    },
   },
   {
     path: '/admin/blog',

@@ -25,6 +25,10 @@
 import Layout from '@/components/layout/AppLayout.vue';
 import AppHeader from '@/components/layout/AppHeader.vue';
 import AppFooter from '@/components/layout/AppFooter.vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+store.dispatch('user/tokenCheck');
 </script>
 
 <style>

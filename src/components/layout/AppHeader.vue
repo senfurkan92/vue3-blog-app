@@ -112,6 +112,12 @@
                         About
                     </router-link>
                 </li>
+                <li v-if="$store.getters['user/isAuthenticated']">
+                    <router-link :to="{ name: 'dashboard' }"
+                    class="block py-2 pr-4 pl-3 md:p-0 font-bold">
+                        Dashboard
+                    </router-link>
+                </li>
             </ul>
         </div>
         </div>
