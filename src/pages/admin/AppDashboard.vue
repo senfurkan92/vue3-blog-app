@@ -4,14 +4,27 @@
       <AppButton
         :deny="false"
         :content="'+'"
-        :action="() => $router.push('/blog')"
+        :action="() => showModal = true"
       />
     </div>
   </div>
+  <AppModal
+    :show="showModal"
+    @hide="showModal = false"
+  >
+    <template #body>
+      <AppAddPost/>
+    </template>
+  </AppModal>
 </template>
 
 <script setup>
 import AppButton from '@/components/base/AppButton.vue';
+import AppModal from '@/components/base/AppModal.vue';
+import AppAddPost from '@/components/admin/AppAddPost.vue';
+import { ref } from 'vue';
+
+const showModal = ref(true);
 
 </script>
 

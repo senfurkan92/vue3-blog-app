@@ -6,6 +6,7 @@ import App from './App.vue';
 import './registerServiceWorker';
 import './assets/css/index.css';
 import 'flowbite';
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
 import 'sweetalert2/dist/sweetalert2.min.css';
 

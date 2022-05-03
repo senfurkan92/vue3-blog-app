@@ -8,3 +8,11 @@ export interface SignInDto {
   email: string,
   password: string,
 }
+
+export interface AddPost {
+  title: string,
+  caption: string,
+  description: string,
+  content: string,
+  image: string,
+}
