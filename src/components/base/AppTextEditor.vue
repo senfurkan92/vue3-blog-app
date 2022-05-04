@@ -18,8 +18,8 @@
 </template>
 
 <script setup>
-import { defineProps, ref } from 'vue';
-import { QuillEditor, Quill } from '@vueup/vue-quill';
+import { defineProps } from 'vue';
+import { QuillEditor } from '@vueup/vue-quill';
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
 const props = defineProps({

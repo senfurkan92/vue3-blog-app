@@ -3,14 +3,29 @@
     <div class="text-right">
       <AppButton
         :deny="false"
-        :content="'+'"
-        :action="() => showModal = true"
+        :content="'+ Category'"
+        :action="() => showCategoryModal = true"
+      />
+      <AppButton
+        :deny="false"
+        :content="'+ Post'"
+        :action="() => showPostModal = true"
       />
     </div>
   </div>
   <AppModal
-    :show="showModal"
-    @hide="showModal = false"
+    :title="'new category'"
+    :show="showCategoryModal"
+    @hide="showCategoryModal = false"
+  >
+    <template #body>
+      <AppAddCategory/>
+    </template>
+  </AppModal>
+  <AppModal
+    :title="'new post'"
+    :show="showPostModal"
+    @hide="showPostModal = false"
   >
     <template #body>
       <AppAddPost/>
@@ -22,10 +37,11 @@
 import AppButton from '@/components/base/AppButton.vue';
 import AppModal from '@/components/base/AppModal.vue';
 import AppAddPost from '@/components/admin/AppAddPost.vue';
+import AppAddCategory from '@/components/admin/AppAddCategory.vue';
 import { ref } from 'vue';
 
-const showModal = ref(true);
-
+const showPostModal = ref(false);
+const showCategoryModal = ref(false);
 </script>
 
 <style>

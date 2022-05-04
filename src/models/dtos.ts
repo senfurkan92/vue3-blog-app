@@ -15,4 +15,10 @@ export interface AddPost {
   description: string,
   content: string,
   image: string,
+  authorId: number,
+  categoryId: number,
+}
+
+export interface AddCategory {
+  name: string,
 }

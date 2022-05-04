@@ -32,5 +32,32 @@ store.dispatch('user/tokenCheck');
 </script>
 
 <style>
+  body {
+    /* Foreground, Background */
+    scrollbar-color: #457B9D #A8DADC;
+  }
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
+  body::-webkit-scrollbar-thumb { /* Foreground */
+    background: #457B9D;
+  }
+  body::-webkit-scrollbar-track { /* Background */
+    background: #A8DADC;
+  }
 
+  body {
+    /* Foreground, Background */
+    scrollbar-color: #457B9D #A8DADC;
+  }
+  .styled-scrollbars::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .styled-scrollbars::-webkit-scrollbar-thumb { /* Foreground */
+    background: #457B9D;
+  }
+  .styled-scrollbars::-webkit-scrollbar-track { /* Background */
+    background: #A8DADC;
+  }
 </style>
