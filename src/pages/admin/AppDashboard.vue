@@ -39,9 +39,13 @@ import AppModal from '@/components/base/AppModal.vue';
 import AppAddPost from '@/components/admin/AppAddPost.vue';
 import AppAddCategory from '@/components/admin/AppAddCategory.vue';
 import { ref } from 'vue';
+import { useStore } from 'vuex';
 
 const showPostModal = ref(false);
 const showCategoryModal = ref(false);
+
+const store = useStore();
+store.dispatch('category/fetchCategories');
 </script>
 
 <style>
