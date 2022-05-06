@@ -76,34 +76,21 @@
                     <div id="dropdownNavbar" class="hidden z-10 w-44 rounded divide-y
                     divide-gray-100 shadow dark:divide-gray-600 bg-sun-navy
                     dark:bg-moon-4">
-                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                        <ul class="py-1 text-sm text-sun-white dark:text-moon-2"
                         aria-labelledby="dropdownLargeButton">
-                        <li>
-                            <router-link :to="{ name: 'posts-tech', params: { tech: 'vue' }}"
-                            class="block py-2 px-4 hover:bg-gray-100
-                            dark:hover:bg-gray-600 dark:hover:text-white">VUE</router-link>
-                        </li>
-                        <li>
-                            <router-link :to="{ name: 'posts-tech', params: { tech: '.net' }}"
-                            class="block py-2 px-4 hover:bg-gray-100
-                            dark:hover:bg-gray-600 dark:hover:text-white">.NET</router-link>
-                        </li>
-                        <li>
-                            <router-link :to="{ name: 'posts-tech', params: { tech: 'js' }}"
-                            class="block py-2 px-4 hover:bg-gray-100
-                            dark:hover:bg-gray-600 dark:hover:text-white">
-                                JS
-                            </router-link>
-                        </li>
+                            <li v-for="category in $store.state.category.list" :key="category.id">
+                                <router-link :to="{
+                                    name: 'posts-tech',
+                                    params: {
+                                        tech: category.name
+                                    }
+                                }"
+                                class="block py-2 px-4 hover:underline hover:scale-110
+                                  origin-left">
+                                    {{category.name}}
+                                </router-link>
+                            </li>
                         </ul>
-                        <div class="py-1">
-                            <router-link :to="{ name: 'posts-tech', params: { tech: 'sql' }}"
-                            class="block py-2 px-4 text-sm
-                            text-gray-700hover:bg-gray-100
-                            dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">
-                                SQL
-                            </router-link>
-                        </div>
                     </div>
                 </li>
                 <li>

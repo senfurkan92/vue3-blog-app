@@ -24,6 +24,19 @@
         </div>
       </div>
       <div class="mb-6">
+        <AppSelect
+          :label="'Category'"
+          :elementId="'category'"
+          :model="v$.categoryId"
+          :options="$store.state.category.list.map(x => ({
+            value: x.id,
+            text: x.name,
+          }))"
+          @onInput="post.categoryId = $event"
+          @onFocus="v$.categoryId.$dirty = true"
+        />
+      </div>
+      <div class="mb-6">
         <AppInput
           :placeholder="'Title'"
           :label="'Title'"
@@ -79,6 +92,7 @@
 import AppTextArea from '@/components/base/AppTextArea.vue';
 import AppTextEditor from '@/components/base/AppTextEditor.vue';
 import AppInput from '@/components/base/AppInput.vue';
+import AppSelect from '@/components/base/AppSelect.vue';
 import AppFileInput from '@/components/base/AppFileInput.vue';
 import AppButton from '@/components/base/AppButton.vue';
 import { reactive, ref, inject } from 'vue';
@@ -90,11 +104,13 @@ const swal = inject('$swal');
 const store = useStore();
 
 const post = reactive({
-  title: '',
-  caption: '',
-  description: '',
-  content: '',
-  image: '',
+  title: 'test title',
+  caption: 'test caption',
+  description: 'test description',
+  content: 'text content',
+  image: null,
+  categoryId: 0,
+  authorId: store.state.user.activeUser.id || 6,
 });
 
 const rules = {
@@ -113,6 +129,9 @@ const rules = {
   image: {
     required,
   },
+  categoryId: {
+    required,
+  },
 };
 
 const v$ = useVuelidate(rules, post);
@@ -127,7 +146,21 @@ const imageAdd = (e) => {
 };
 
 const save = async () => {
-  swal.fire('hello');
-  const result = store.dispatch('post/addPost', post);
+  const result = await store.dispatch('post/addPost', post);
+  if (result.data) {
+    result.data.category = store.state.category.list.find((x) => x.id === result.data.categoryId);
+    store.commit('post/pushPost', result.data);
+    swal.fire({
+      icon: 'success',
+      title: 'Congratulations !!!',
+      text: 'A new post has been added',
+    });
+  } else {
+    swal.fire({
+      icon: 'error',
+      title: 'Sh*t !!!',
+      text: 'A new post has not been added',
+    });
+  }
 };
 </script>

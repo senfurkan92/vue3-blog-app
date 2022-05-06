@@ -29,6 +29,7 @@ import { useStore } from 'vuex';
 
 const store = useStore();
 store.dispatch('user/tokenCheck');
+store.dispatch('category/fetchCategories');
 </script>
 
 <style>
