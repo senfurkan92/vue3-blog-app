@@ -82,7 +82,8 @@
                                 <router-link :to="{
                                     name: 'posts-tech',
                                     params: {
-                                        tech: category.name
+                                        tech: category.name,
+                                        techId: category.id,
                                     }
                                 }"
                                 class="block py-2 px-4 hover:underline hover:scale-110

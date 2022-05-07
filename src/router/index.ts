@@ -10,18 +10,13 @@ const routes: Array<RouteRecordRaw> = [
     name: 'home',
   },
   {
-    path: '/posts',
-    component: () => import('@/pages/posts/AppPosts.vue'),
-    name: 'posts',
-  },
-  {
-    path: '/posts/:tech',
-    component: () => import('@/pages/posts/_tech.vue'),
+    path: '/posts/:tech/:techId',
+    component: () => import('@/pages/posts/AppTech.vue'),
     name: 'posts-tech',
   },
   {
-    path: '/posts/:tech/:id',
-    component: () => import('@/pages/posts/_id.vue'),
+    path: '/posts/:tech/:techId/:title/:postId',
+    component: () => import('@/pages/posts/AppPost.vue'),
     name: 'posts-post',
   },
   {

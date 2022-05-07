@@ -109,7 +109,7 @@ const post = reactive({
   description: 'test description',
   content: 'text content',
   image: null,
-  categoryId: 0,
+  categoryId: null,
   authorId: store.state.user.activeUser.id || 6,
 });
 

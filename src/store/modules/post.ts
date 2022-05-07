@@ -1,6 +1,7 @@
 import { AddPost } from '@/models/dtos';
 import { Post } from '@/models';
 import axios from '@/helpers/axios-instance';
+import { AxiosResponse } from 'axios';
 
 interface State {
   list: Post[],
@@ -82,6 +83,20 @@ export default {
         commit('depublishPost', id);
       }
       return resp;
+    },
+    fetchPostsByCategory(_ : any, categoryId: number) : Promise<AxiosResponse<Post[]>> {
+      return axios.post('/posts', {
+        where: {
+          categoryId,
+        },
+        include: {
+          category: true,
+          author: true,
+        },
+      });
+    },
+    fetchPost(_ : any, id: number) : Promise<AxiosResponse<Post>> {
+      return axios.get(`/posts/${id}`);
     },
   },
 };

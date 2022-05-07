@@ -20,7 +20,7 @@
         {{props.description}}
       </p>
       <router-link
-        href="#" :to="props.to"
+        :to="props.to"
         class="inline-flex items-center py-2 px-3 text-sm font-medium text-center
         rounded-lg hfocus:ring-4
         focus:outline-none
